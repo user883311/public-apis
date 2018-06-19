@@ -1,0 +1,7 @@
+name: 'TextEditor'
+version: 0.0.1
+description: Repository.
+dependencies:
+  html: any
+  js: ^0.6.0
+  browser: ^0.10.0
