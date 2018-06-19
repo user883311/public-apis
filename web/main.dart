@@ -8,20 +8,18 @@ main() async {
     jsonResponse = JSON.decode(fileContents);
     var apiList = new List();
     apiList = jsonResponse["entries"];
-    
-    var headers = new DivElement();
-    document.body.children.add(headers);
-    addTableRow(headers, apiList[0].keys);
 
-    for (var api in apiList) {
-      var a = new Element.a();
-      document.body.children.add(a);
-      a.attributes["href"] = api["Link"];
-
-      var row = new DivElement();
-      a.children.add(row);
-      addTableRow(row, api.values);
+    // List headers = apiList[0].keys;
+    var rowElements = new List();
+    for (var item in apiList) {
+      for (var value in item.values) {
+        rowElements.add(value);
+      }
     }
+    DivElement table = document.getElementById("table");
+    // addTableRow(table, headers, "headers");
+    addTableRow(table, rowElements);
+    
   }).catchError((Error error) {
     print(error.toString());
   });
@@ -31,6 +29,9 @@ void addTableRow(Element parent, List l) {
   for (var text in l) {
     var child1 = new DivElement();
     parent.children.add(child1);
-    child1.text = text;
+    child1.text = text == "" ? "n/a" : text;
+    // if (!className.isEmpty) child1.attributes["class"] = className;
+    // if (!idName.isEmpty) child1.attributes["id"] = idName;
+    child1.attributes["href"] = l[5].toString();
   }
 }

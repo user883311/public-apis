@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(0, 36, 81);
+    color: rgb(254, 208, 131);
+}
+
+#table {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* ADAPTIVE DESIGN */
+
+/* ---------------------------- */
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+    #table {}
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    #table {
+        width: 80%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    #table {
+        width: 60%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    #table {
+        width: 50%;
+    }
+}
